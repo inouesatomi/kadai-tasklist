@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   get 'toppages/index'
 
-  root to: 'topppages#index'
+  root to: 'toppages#index'
+  
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
   get 'users/index'
 
