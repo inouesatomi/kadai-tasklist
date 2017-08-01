@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
-  include SessionHelper
+  include SessionsHelper
   
   
   private
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   
   def require_user_logged_in
     unless logged_in?
-    require_to_login_url
+    redirect_to_login_url
     end
   end
 end
